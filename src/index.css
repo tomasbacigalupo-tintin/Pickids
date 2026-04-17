@@ -1,0 +1,177 @@
+/* =========================================================
+   PICKIDS — Design Tokens + Global Reset
+   Fiel al documento de diseño (sección 0)
+   ========================================================= */
+
+:root {
+  /* Paleta */
+  --p-primary: #0B3D91;
+  --p-primary-tint: rgba(11, 61, 145, 0.08);
+  --p-primary-tint-strong: rgba(11, 61, 145, 0.14);
+  --p-action: #F59E0B;
+  --p-action-tint: rgba(245, 158, 11, 0.10);
+  --p-action-tint-strong: rgba(245, 158, 11, 0.18);
+  --p-success: #16A34A;
+  --p-pending: #EAB308;
+  --p-pending-tint: rgba(234, 179, 8, 0.14);
+  --p-inprogress: #2563EB;
+  --p-inprogress-tint: rgba(37, 99, 235, 0.12);
+  --p-ready: #22C55E;
+  --p-ready-tint: rgba(34, 197, 94, 0.14);
+  --p-delivered: #16A34A;
+  --p-delivered-tint: rgba(22, 163, 74, 0.14);
+  --p-error: #DC2626;
+  --p-error-tint: rgba(220, 38, 38, 0.10);
+  --p-grey: #64748B;
+  --p-grey-tint: rgba(100, 116, 139, 0.14);
+
+  /* Neutros */
+  --n-900: #0F172A;
+  --n-700: #334155;
+  --n-600: #475569;
+  --n-400: #94A3B8;
+  --n-200: #E2E8F0;
+  --n-100: #F1F5F9;
+  --n-bg: #F8FAFC;
+  --n-white: #FFFFFF;
+
+  /* Tipografía */
+  --f-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-28: 28px;
+  --fs-22: 22px;
+  --fs-18: 18px;
+  --fs-16: 16px;
+  --fs-14: 14px;
+  --fs-12: 12px;
+
+  /* Radios */
+  --r-card: 16px;
+  --r-btn: 12px;
+  --r-chip: 999px;
+
+  /* Sombras */
+  --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.06);
+  --shadow-elev: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --shadow-fab: 0 8px 24px rgba(245, 158, 11, 0.35);
+
+  /* Espaciados */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-8: 32px;
+
+  color-scheme: light;
+  font-family: var(--f-sans);
+  color: var(--n-900);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100dvh;
+  background: var(--n-bg);
+}
+
+body {
+  overscroll-behavior-y: contain;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Utility: hide scrollbar but keep scrollable */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Safe area insets */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+
+/* Mobile-first stage: max width 480px, centered on desktop for preview */
+.app-stage {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100dvh;
+  background: var(--n-bg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 48px rgba(15,23,42,0.08);
+}
+
+@media (min-width: 600px) {
+  body { background: linear-gradient(135deg, #EEF2FF, #F8FAFC, #FEF3C7); }
+}
+
+/* ===== Typography utilities ===== */
+.t-h1 { font-size: var(--fs-28); font-weight: 700; line-height: 1.2; }
+.t-h2 { font-size: var(--fs-22); font-weight: 700; line-height: 1.25; }
+.t-h3 { font-size: var(--fs-18); font-weight: 600; line-height: 1.3; }
+.t-body { font-size: var(--fs-16); font-weight: 400; line-height: 1.4; }
+.t-sm { font-size: var(--fs-14); font-weight: 400; line-height: 1.4; }
+.t-xs { font-size: var(--fs-12); font-weight: 500; line-height: 1.35; letter-spacing: 0.2px; }
+.t-muted { color: var(--n-600); }
+.t-faded { color: var(--n-400); }
+
+/* Keyframes */
+@keyframes p-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes p-slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes p-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.95; }
+}
