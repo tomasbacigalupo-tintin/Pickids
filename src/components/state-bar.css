@@ -1,0 +1,38 @@
+.pk-statebar {
+  display: flex; align-items: flex-start;
+  background: white; border-radius: var(--r-card);
+  padding: 16px 10px 12px;
+  box-shadow: var(--shadow-card);
+  gap: 4px;
+}
+.pk-statebar__step {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  min-width: 0; flex: 0 0 auto;
+}
+.pk-statebar__node {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--n-200);
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: all 0.25s;
+}
+.pk-statebar__node.is-active { background: var(--p-primary); }
+.pk-statebar__check { color: white; font-size: 14px; line-height: 0; }
+.pk-statebar__label { font-size: 10px; color: var(--n-600); font-weight: 500; letter-spacing: 0.2px; text-align: center; }
+.pk-statebar__line {
+  flex: 1; height: 2px; background: var(--n-200);
+  margin: 6px 0 0; transition: background 0.25s;
+}
+.pk-statebar__line.is-active { background: var(--p-primary); }
+
+.pk-statebar--negative {
+  align-items: center; justify-content: center; gap: 10px;
+  padding: 16px; border: 1.5px solid;
+}
+.pk-statebar__dot { width: 10px; height: 10px; border-radius: 50%; animation: p-pulse 1.6s infinite; }
+
+.pk-statechip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 10px; border-radius: var(--r-chip);
+  font-size: var(--fs-12); font-weight: 600; white-space: nowrap;
+}
+.pk-statechip__dot { width: 6px; height: 6px; border-radius: 50%; }
