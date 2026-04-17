@@ -1,6 +1,6 @@
 # Pickids
 
-**App de retiro escolar** — prototipo PWA con las dos experiencias (App Padres y App Colegio) en una sola base de código, siguiendo el [documento de diseño de producto](./docs/Pickids_Diseno_Producto.md).
+**App de retiro escolar** — prototipo PWA con las dos experiencias (App Padres y App Colegio) en una sola base de código, siguiendo el documento de diseño de producto compartido inicialmente (`Pickids_Diseno_Producto.md`).
 
 ![status](https://img.shields.io/badge/estado-prototipo-f59e0b) ![stack](https://img.shields.io/badge/stack-React%20+%20Vite%20+%20PWA-0b3d91) ![backend](https://img.shields.io/badge/backend-IndexedDB%20(Dexie)-2563eb)
 
